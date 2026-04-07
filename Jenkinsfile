@@ -48,7 +48,7 @@ pipeline {
       parallel {
         stage('Pushing Image') {
           environment {
-            DOCKERHUB_CREDENTIALS = credentials('DOCKER_HUB_PASS')
+            DOCKERHUB_CREDENTIALS = credentials('docker_jenkins')
           }
           steps {
             sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
