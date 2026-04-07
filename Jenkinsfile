@@ -29,10 +29,9 @@ pipeline {
         }
         stage('User Acceptance') {
           steps{
-            input message: 'Proceed to push to main', ok "Yes, continue"
+            input message: 'Proceed to push to main', ok: "Yes, continue"
             }    
           }
-        }
           stage('Pushing and Merging'){
             parallel {
                 stage('Pushing Image') {
